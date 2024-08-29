@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Objects;
+
 
 public class DataSource {
 
@@ -15,7 +15,6 @@ public class DataSource {
 
     try{
       connection =  DriverManager.getConnection(db_file);
-      System.out.println("we`re connected");
     } catch(SQLException e){
       e.printStackTrace();
     }
@@ -38,7 +37,7 @@ public class DataSource {
             resultSet.getString("password"),
             resultSet.getInt("account_id"));
         }
-    )catch(SQLException e){
+      }catch(SQLException e){
       e.printStackTrace();
     }
 
@@ -47,6 +46,7 @@ public class DataSource {
 
   
   public static void main(String[] args) {
-    connect();
+    Customer customer = getCustomer("twest8o@friendfeed.com");
+    System.out.println(customer.getName());
   }
 }
