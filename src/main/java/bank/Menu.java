@@ -1,20 +1,15 @@
 package bank;
 
 import java.util.Scanner;
-
 import javax.security.auth.login.LoginException;
-
 import bank.exception.AmountException;
 
 public class Menu {
-  
-  
-  
+    
   private Scanner scanner;
 
-
-  public static void main(string[] args){
-    System.out.printlin("Welcome to Globe Bank International!");
+  public static void main(String[] args){
+    System.out.println("Welcome to Globe Bank International!");
 
     Menu menu = new Menu();
     menu.scanner = new Scanner(System.in);
@@ -26,10 +21,6 @@ public class Menu {
 
       menu.showMenu(customer, account);
     }
-
-
-
-
     menu.scanner.close();
   }
 
